@@ -736,7 +736,7 @@ def check_wireless_ports(networks: list):
     for ap in aggregated_ap_uplinks:
         # Translating network ID to network name
         network_id = ap['network']['id']
-        network_name = "N/A"
+        network_name = network_id   # Handling cases where network has no name
         for network in networks:
             if network['id'] == network_id:
                 network_name = network['name']
